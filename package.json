@@ -1,0 +1,43 @@
+{
+  "name": "docma-template-mission-control",
+  "version": "1.0.0",
+  "description": "Mission Control template for Docma. https://github.com/onury/docma",
+  "repository": "https://github.com/capevace/docma-template-mission-control",
+  "license": "MIT",
+  "author": "Onur Yıldırım <onur@cutepilot.com>",
+  "main": "index.js",
+  "files": [
+    "template/",
+    "index.js",
+    "helper.js",
+    "LICENSE"
+  ],
+  "scripts": {
+    "less": "lessc ./src/less/styles.less ./template/css/styles.css --clean-css=\"--s1 --advanced\"",
+    "uglify": "uglifyjs ./src/js/app.svg.js ./src/js/app.helper.js ./src/js/app.filters.js ./src/js/app.core.js -o ./template/js/app.min.js --comments",
+    "mission-control:hot": "NODE_ENV=development livereload template",
+    "mission-control:watch": "NODE_ENV=development postcss -w -o template/css/mission-control.css src/mission-control/style.css",
+    "mission-control": "NODE_ENV=production postcss -o template/css/mission-control.css src/mission-control/style.css",
+    "build": "npm run less && npm run uglify"
+  },
+  "keywords": [
+    "docma",
+    "template"
+  ],
+  "peerDependencies": {
+    "docma": ">=2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "less": "^3.9.0",
+    "less-plugin-clean-css": "^1.5.1",
+    "livereload": "^0.9.3",
+    "postcss": "^8.2.13",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2",
+    "uglify-js": "^3.4.9"
+  },
+  "dependencies": {
+    "glob": "^7.1.6"
+  }
+}

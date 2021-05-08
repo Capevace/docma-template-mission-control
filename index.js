@@ -1,8 +1,8 @@
 'use strict';
 
-const globSync = require('glob');
-const glob = require('utils').promisify(globSync);
-const postcss = require('postcss');
+// const globSync = require('glob');
+// const glob = require('utils').promisify(globSync);
+// const postcss = require('postcss');
 
 /**
  *  Zebra - Docma Default Template
@@ -121,17 +121,17 @@ module.exports = (template, modules) => {
     template.postBuild(async () => {
 
 
-        // options is optional
-        try {
-            const files = await glob(template.getDestPath('**/*.html'));
+        // // options is optional
+        // try {
+        //     const files = await glob(template.getDestPath('**/*.html'));
 
-            const css = await fs.readFile(__dirname + '/src/mission-control/style.css');
-            postcss().process(css).then(result => {
-              console.log(result.css)
-            });
-        } catch (e) {
-            console.log('Could not build tailwind');
-        }
+        //     const css = await fs.readFile(__dirname + '/src/mission-control/style.css');
+        //     postcss().process(css).then(result => {
+        //       console.log(result.css)
+        //     });
+        // } catch (e) {
+        //     console.log('Could not build tailwind');
+        // }
         
 
         const list = getFontAwsomeList();

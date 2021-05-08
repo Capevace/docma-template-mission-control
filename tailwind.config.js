@@ -1,7 +1,8 @@
 module.exports = {
   mode: 'jit',
   purge: [
-    'template/**/*.html'
+    'template/**/*.html',
+    '../mission-control/tutorials/**/*.html',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
